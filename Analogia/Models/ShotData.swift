@@ -17,9 +17,11 @@ struct Shot: Identifiable {
     var date: Date
     var image: Image
     var location: String
+    var film: String
     var aperture: Float
-    var exposure: Int
+    var shutterSpeed: Int
     var iso: Int
     var focus: Float
     var description: String
+    var flashIsUsed: Bool
 }

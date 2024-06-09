@@ -12,22 +12,27 @@ var shots = [Shot(objectID: "1",
                   date: Date.now,
                   image: Image("Cow"),
                   location: "Lazar utca 9",
+                  film: "Kodak Gold 200",
                   aperture: 5.6,
-                  exposure: 1000,
+                  shutterSpeed: 1000,
                   iso: 400,
                   focus: 7.5,
-                  description: "I used exposure compensation"),
+                  description: "I used exposure compensation",
+                  flashIsUsed: false),
 
              Shot(objectID: "2",
                   name: "Lighthouse",
                   date: Date.now,
                   image: Image("Lighthouse"),
                   location: "O utca",
+                  film: "Kodak Portra 400",
                   aperture: 2.0,
-                  exposure: 125,
+                  shutterSpeed: 125,
                   iso: 200,
                   focus: 10.0,
-                  description: "A lighthouse on Madeira")]
+                  description: "A lighthouse on Madeira",
+                  flashIsUsed: true)
+    ]
 
 struct ContentView: View {
     var body: some View {

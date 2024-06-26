@@ -13,6 +13,7 @@
 		C75766AF2C16228500E27944 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75766AE2C16228500E27944 /* Preview Assets.xcassets */; };
 		C75766B62C16233700E27944 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75766B52C16233700E27944 /* DetailView.swift */; };
 		C75766B92C1624A900E27944 /* ShotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75766B82C1624A900E27944 /* ShotData.swift */; };
+		C75766BE2C166AC900E27944 /* NewShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75766BD2C166AC900E27944 /* NewShotView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		C75766AE2C16228500E27944 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C75766B52C16233700E27944 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C75766B82C1624A900E27944 /* ShotData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotData.swift; sourceTree = "<group>"; };
+		C75766BD2C166AC900E27944 /* NewShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShotView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				C75766A92C16228300E27944 /* ContentView.swift */,
 				C75766B52C16233700E27944 /* DetailView.swift */,
+				C75766BD2C166AC900E27944 /* NewShotView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			files = (
 				C75766AA2C16228300E27944 /* ContentView.swift in Sources */,
 				C75766B92C1624A900E27944 /* ShotData.swift in Sources */,
+				C75766BE2C166AC900E27944 /* NewShotView.swift in Sources */,
 				C75766B62C16233700E27944 /* DetailView.swift in Sources */,
 				C75766A82C16228300E27944 /* AnalogiaApp.swift in Sources */,
 			);
@@ -299,6 +303,7 @@
 				DEVELOPMENT_TEAM = 63U36WDKYR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to capture an image to show in the app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -328,6 +333,7 @@
 				DEVELOPMENT_TEAM = 63U36WDKYR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to capture an image to show in the app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 var shot = Shot(objectID: "1",
-                name: "Cow",
+                title: "Cow",
                 date: Date.now,
                 image: Image("Cow"),
                 location: "Lazar utca 9",
@@ -19,7 +19,9 @@ var shot = Shot(objectID: "1",
                 iso: 400,
                 focus: 7.5,
                 note: "I used exposure compensation",
-                flashIsUsed: false)
+                flashIsUsed: false,
+                lens: "Canon RF 24-105mm F2.8L IS USM Z lens",
+                camera: "Canon EOS R5")
 
 struct DetailView: View {
     var body: some View {
@@ -29,9 +31,11 @@ struct DetailView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Name: \(shot.name)")
+                    Text("Title: \(shot.title)")
                     Text("Date: \(shot.date.formatted())")
                     Text("Location: \(shot.location)")
+                    Text("Camera: \(shot.camera)")
+                    Text("Lens: \(shot.lens)")
                     Text("Film: \(shot.film)")
                     Text("ISO: \(shot.iso)")
                     Text("Aperture: \(shot.aperture.formatted())")

@@ -13,7 +13,7 @@ struct Shot: Identifiable {
         return objectID
     }
     let objectID: String
-    var name: String
+    var title: String
     var date: Date
     var image: Image
     var location: String
@@ -24,4 +24,6 @@ struct Shot: Identifiable {
     var focus: Float
     var note: String
     var flashIsUsed: Bool
+    var lens: String
+    var camera: String
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 var shots = [Shot(objectID: "1",
-                  name: "Cow",
+                  title: "Cow",
                   date: Date.now,
                   image: Image("Cow"),
                   location: "Lazar utca 9",
@@ -18,10 +18,12 @@ var shots = [Shot(objectID: "1",
                   iso: 400,
                   focus: 7.5,
                   note: "I used exposure compensation",
-                  flashIsUsed: false),
+                  flashIsUsed: false,
+                  lens: "Canon RF 24-105mm F2.8L IS USM Z",
+                  camera: "Canon EOS R5"),
 
              Shot(objectID: "2",
-                  name: "Lighthouse",
+                  title: "Lighthouse",
                   date: Date.now,
                   image: Image("Lighthouse"),
                   location: "O utca",
@@ -31,28 +33,44 @@ var shots = [Shot(objectID: "1",
                   iso: 200,
                   focus: 10.0,
                   note: "A lighthouse on Madeira",
-                  flashIsUsed: true)
-    ]
+                  flashIsUsed: true,
+                  lens: "Canon RF 24-105mm F2.8L IS USM Z",
+                  camera: "Canon EOS R5")
+]
 
 struct ContentView: View {
+    @State private var showingSheet = false
+    
     var body: some View {
         NavigationView {
-            List(shots) { shot in
-                NavigationLink(destination: DetailView()) {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(shot.name)
-                                .fontWeight(.heavy)
-                            Text(shot.date.formatted())
+            ZStack {
+                List(shots) { shot in
+                    NavigationLink(destination: DetailView()) {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(shot.title)
+                                    .fontWeight(.heavy)
+                                Text(shot.date.formatted())
+                            }
+                            shot.image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50, alignment: .trailing)
                         }
-                        shot.image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50, alignment: .trailing)
                     }
                 }
             }
             .navigationTitle("Shots")
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("New Shot") {
+                        showingSheet.toggle()
+                    }
+                    .sheet(isPresented: $showingSheet) {
+                        NewShotView()
+                    }
+                }
+            })
         }
     }
 }
